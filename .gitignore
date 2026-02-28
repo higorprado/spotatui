@@ -22,3 +22,6 @@ tags
 
 # Local cargo config (platform-specific settings)
 .cargo/
+
+# build artifacts from the worker-relay subproject
+worker-relay/node_modules/
