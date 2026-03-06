@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.37.3] - 2026-03-06
+
+
+### Added
+
+- **Startup Playback Behavior Setting**: Added `behavior.startup_behavior` with `Continue`, `Play`, and `Pause` options, plus a new Settings UI cycle control so startup playback state can be configured without editing YAML ([#146](https://github.com/LargeModGames/spotatui/pull/146)).
+- **Mouse Playbar Controls**: Added clickable playbar controls for previous, play/pause, next, shuffle, repeat, like, and volume in both the main layout and Basic View, including hitbox handling for resized playbars ([#147](https://github.com/LargeModGames/spotatui/pull/147)).
+- **Force Previous Track Action**: Added a dedicated force-previous command and configurable keybinding (`P` by default) that always skips to the previous track instead of restarting the current one first ([#141](https://github.com/LargeModGames/spotatui/pull/141)).
+- **Auto-Update Controls**: Added startup auto-update controls via `behavior.disable_auto_update`, `behavior.auto_update_delay`, and the `--no-update` CLI flag. Delayed installs now persist pending state and announce when an update will be applied.
+
+### Changed
+
+- **Settings Editing Model**: Settings now support fixed-option cycle values directly in the list UI, enabling one-step editing for items like startup playback behavior.
+- **Update Flow Messaging**: Automatic update checks now distinguish between immediate installs, delayed pending installs, and skipped startup checks instead of always updating right away.
+
+### Fixed
+
+- **Linux Release Features**: Updated the Linux CD build to include the `mpris` feature again so release binaries keep desktop media-control integration working (fixes [#150](https://github.com/LargeModGames/spotatui/issues/150)).
+- **Shift Keybinding Normalization**: Normalized kitty-protocol `Shift+letter` input so uppercase bindings like the new default `P` action are recognized reliably across terminals.
+
 ## [0.37.2] - 2026-03-04
 
 ### Changed
@@ -1076,3 +1096,4 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
